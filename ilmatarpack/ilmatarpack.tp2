@@ -1,0 +1,187 @@
+BACKUP ~IlmatarPack\backup~
+AUTHOR ~Ilmatar & Lava Del'Vortel~
+README ~IlmatarPack/IlmatarPortraitPack.html~
+
+BEGIN ~Ilmatar's Portrait Pack - charname portraits~
+  MKDIR ~portraits~
+  COPY ~IlmatarPack/aerie/naeriel.bmp~     ~portraits/IP#AerL.bmp~
+  COPY ~IlmatarPack/aerie/naeriem.bmp~     ~portraits/IP#AerM.bmp~
+  COPY ~IlmatarPack/aerie/naeries.bmp~     ~portraits/IP#AerS.bmp~
+  COPY ~IlmatarPack/aerie2/naeriel.bmp~    ~portraits/IP#Aer2L.bmp~
+  COPY ~IlmatarPack/aerie2/naeriem.bmp~    ~portraits/IP#Aer2M.bmp~
+  COPY ~IlmatarPack/aerie2/naeries.bmp~    ~portraits/IP#Aer2S.bmp~
+  COPY ~IlmatarPack/Cernd/ncerndL.bmp~     ~portraits/IP#CernL.bmp~
+  COPY ~IlmatarPack/Cernd/ncerndm.bmp~     ~portraits/IP#Cernm.bmp~
+  COPY ~IlmatarPack/Cernd/ncernds.bmp~     ~portraits/IP#Cerns.bmp~
+  COPY ~IlmatarPack/Edwin/nedwinL.bmp~     ~portraits/IP#EdwL.bmp~
+  COPY ~IlmatarPack/Edwin/nedwinm.bmp~     ~portraits/IP#Edwm.bmp~
+  COPY ~IlmatarPack/Edwin/nedwins.bmp~     ~portraits/IP#Edws.bmp~
+  COPY ~IlmatarPack/Edwin2/nedwinL.bmp~    ~portraits/IP#Edw2L.bmp~
+  COPY ~IlmatarPack/Edwin2/nedwinm.bmp~    ~portraits/IP#Edw2m.bmp~
+  COPY ~IlmatarPack/Edwin2/nedwins.bmp~    ~portraits/IP#Edw2s.bmp~
+  COPY ~IlmatarPack/Imoen/nimoenL.bmp~     ~portraits/IP#ImoeL.bmp~
+  COPY ~IlmatarPack/Imoen/nimoenM.bmp~     ~portraits/IP#Imoem.bmp~
+  COPY ~IlmatarPack/Imoen/nimoens.bmp~     ~portraits/IP#Imoes.bmp~
+  COPY ~IlmatarPack/Jaheira/njaheirL.bmp~  ~portraits/IP#JahL.bmp~
+  COPY ~IlmatarPack/Jaheira/njaheirm.bmp~  ~portraits/IP#Jahm.bmp~
+  COPY ~IlmatarPack/Jaheira/njaheirs.bmp~  ~portraits/IP#Jahs.bmp~
+  COPY ~IlmatarPack/Mazzy/nMazzyL.bmp~     ~portraits/IP#MazzL.bmp~
+  COPY ~IlmatarPack/Mazzy/nMazzym.bmp~     ~portraits/IP#Mazzm.bmp~
+  COPY ~IlmatarPack/Mazzy/nMazzys.bmp~     ~portraits/IP#Mazzs.bmp~
+  COPY ~IlmatarPack/Nalia/nNaliaL.bmp~     ~portraits/IP#NaliL.bmp~
+  COPY ~IlmatarPack/Nalia/nNaliam.bmp~     ~portraits/IP#Nalim.bmp~
+  COPY ~IlmatarPack/Nalia/nNalias.bmp~     ~portraits/IP#Nalis.bmp~
+  COPY ~IlmatarPack/Viconia/nViconL.bmp~   ~portraits/IP#VicL.bmp~
+  COPY ~IlmatarPack/Viconia/nViconm.bmp~   ~portraits/IP#Vicm.bmp~
+  COPY ~IlmatarPack/Viconia/nVicons.bmp~   ~portraits/IP#Vics.bmp~
+  COPY ~IlmatarPack/Yoshimo/nYoshimL.bmp~  ~portraits/IP#YoshL.bmp~
+  COPY ~IlmatarPack/Yoshimo/nYoshimm.bmp~  ~portraits/IP#Yoshm.bmp~
+  COPY ~IlmatarPack/Yoshimo/nYoshims.bmp~  ~portraits/IP#Yoshs.bmp~
+
+BEGIN ~Ilmatar's original~
+SUBCOMPONENT ~Ilmatar Portrait Pack - Aerie~
+REQUIRE_PREDICATE GAME_IS ~SOA~ OR GAME_IS ~TOB~ ~BGII is required to install this component.~
+  COPY ~IlmatarPack/aerie~      ~override~
+  
+BEGIN ~Lava's slightly darker version~
+SUBCOMPONENT ~Ilmatar Portrait Pack - Aerie~
+REQUIRE_PREDICATE GAME_IS ~SOA~ OR GAME_IS ~TOB~ ~BGII is required to install this component.~
+  COPY ~IlmatarPack/aerie2~      ~override~
+
+BEGIN ~Ilmatar's Portrait Pack - Cernd~
+REQUIRE_PREDICATE GAME_IS ~SOA~ OR GAME_IS ~TOB~ ~BGII is required to install this component.~
+  COPY ~IlmatarPack/cernd~      ~override~
+  
+BEGIN ~Latest Ilmatar's version (shorter hair)~
+SUBCOMPONENT ~Ilmatar's Portrait Pack - Edwin~
+REQUIRE_PREDICATE GAME_IS ~bg1~ OR GAME_IS ~TOTSC~ OR GAME_IS ~TUTU~ OR GAME_IS ~TUTU_TOTSC~ OR GAME_IS ~TUTU+TOTSC~ OR GAME_IS ~BGT~ OR GAME_IS ~SOA~ OR GAME_IS ~TOB~ ~Baldur's Gate II, Baldur's Gate, BGT or TuTu/easyTuTu are required to install this component.~
+
+ACTION_IF GAME_IS ~BGT~ THEN BEGIN
+  COPY ~IlmatarPack/edwin/nedwinl.bmp~  ~override/edwinl.bmp~
+  COPY ~IlmatarPack/edwin/nedwinm.bmp~  ~override/edwinm.bmp~
+  COPY ~IlmatarPack/edwin/nedwins.bmp~  ~override/edwins.bmp~
+END
+
+ACTION_IF GAME_IS ~SOA~ OR GAME_IS ~TOB~ THEN BEGIN
+  COPY ~IlmatarPack/edwin~  ~override~
+END ELSE BEGIN
+  ACTION_IF GAME_IS ~BG1~ OR GAME_IS ~TOTSC~ THEN BEGIN
+    COPY ~IlmatarPack/edwin/nedwinl.bmp~  ~override/edwing.bmp~
+    COPY ~IlmatarPack/edwin/nedwinm.bmp~  ~override/edwinl.bmp~
+    COPY ~IlmatarPack/edwin/nedwins.bmp~  ~override/edwins.bmp~
+  END ELSE BEGIN
+    ACTION_IF GAME_IS ~TUTU~ OR GAME_IS ~TUTU_TOTSC~ OR GAME_IS ~TUTU+TOTSC~ THEN BEGIN
+      COPY ~IlmatarPack/edwin/nedwinm.bmp~  ~override/_dwinl.bmp~
+      COPY ~IlmatarPack/edwin/nedwins.bmp~  ~override/_dwins.bmp~
+    END
+  END
+END
+
+BEGIN ~Early Ilmatar's version (longer hair)~
+SUBCOMPONENT ~Ilmatar's Portrait Pack - Edwin~
+REQUIRE_PREDICATE GAME_IS ~bg1~ OR GAME_IS ~TOTSC~ OR GAME_IS ~TUTU~ OR GAME_IS ~TUTU_TOTSC~ OR GAME_IS ~TUTU+TOTSC~ OR GAME_IS ~BGT~ OR GAME_IS ~SOA~ OR GAME_IS ~TOB~ ~Baldur's Gate II, Baldur's Gate, BGT or TuTu/easyTuTu are required to install this component.~
+
+ACTION_IF GAME_IS ~BGT~ THEN BEGIN
+  COPY ~IlmatarPack/edwin2/nedwinl.bmp~  ~override/edwinl.bmp~
+  COPY ~IlmatarPack/edwin2/nedwinm.bmp~  ~override/edwinm.bmp~
+  COPY ~IlmatarPack/edwin2/nedwins.bmp~  ~override/edwins.bmp~
+END
+
+ACTION_IF GAME_IS ~SOA~ OR GAME_IS ~TOB~ THEN BEGIN
+  COPY ~IlmatarPack/edwin~  ~override~
+END ELSE BEGIN
+  ACTION_IF GAME_IS ~BG1~ OR GAME_IS ~TOTSC~ THEN BEGIN
+    COPY ~IlmatarPack/edwin2/nedwinl.bmp~  ~override/edwing.bmp~
+    COPY ~IlmatarPack/edwin2/nedwinm.bmp~  ~override/edwinl.bmp~
+    COPY ~IlmatarPack/edwin2/nedwins.bmp~  ~override/edwins.bmp~
+  END ELSE BEGIN
+    ACTION_IF GAME_IS ~TUTU~ OR GAME_IS ~TUTU_TOTSC~ OR GAME_IS ~TUTU+TOTSC~ THEN BEGIN
+      COPY ~IlmatarPack/edwin2/nedwinm.bmp~  ~override/_dwinl.bmp~
+      COPY ~IlmatarPack/edwin2/nedwins.bmp~  ~override/_dwins.bmp~
+    END
+  END
+END
+
+BEGIN ~Ilmatar's Portrait Pack - Imoen~
+REQUIRE_PREDICATE GAME_IS ~bg1~ OR GAME_IS ~TOTSC~ OR GAME_IS ~TUTU~ OR GAME_IS ~TUTU_TOTSC~ OR GAME_IS ~TUTU+TOTSC~ OR GAME_IS ~BGT~ OR GAME_IS ~SOA~ OR GAME_IS ~TOB~ ~Baldur's Gate II, Baldur's Gate, BGT or TuTu/easyTuTu are required to install this component.~
+
+ACTION_IF GAME_IS ~BGT~ THEN BEGIN
+  COPY ~IlmatarPack/imoen/nimoenl.bmp~  ~override/imoenl.bmp~
+  COPY ~IlmatarPack/imoen/nimoenm.bmp~  ~override/imoenm.bmp~
+  COPY ~IlmatarPack/imoen/nimoens.bmp~  ~override/imoens.bmp~
+END 
+
+ACTION_IF GAME_IS ~SOA~ OR GAME_IS ~TOB~ THEN BEGIN
+  COPY ~IlmatarPack/imoen~  ~override~
+END ELSE BEGIN
+  ACTION_IF GAME_IS ~BG1~ OR GAME_IS ~TOTSC~ THEN BEGIN
+    COPY ~IlmatarPack/imoen/nimoenl.bmp~  ~override/imoeng.bmp~
+    COPY ~IlmatarPack/imoen/nimoenm.bmp~  ~override/imoenl.bmp~
+    COPY ~IlmatarPack/imoen/nimoens.bmp~  ~override/imoens.bmp~
+  END ELSE BEGIN
+    ACTION_IF GAME_IS ~TUTU~ OR GAME_IS ~TUTU_TOTSC~ OR GAME_IS ~TUTU+TOTSC~ THEN BEGIN
+      COPY ~IlmatarPack/imoen/nimoenm.bmp~  ~override/_moenl.bmp~
+      COPY ~IlmatarPack/imoen/nimoens.bmp~  ~override/_moens.bmp~
+    END
+  END
+END
+
+BEGIN ~Ilmatar's Portrait Pack - Jaheira~
+REQUIRE_PREDICATE GAME_IS ~bg1~ OR GAME_IS ~TOTSC~ OR GAME_IS ~TUTU~ OR GAME_IS ~TUTU_TOTSC~ OR GAME_IS ~TUTU+TOTSC~ OR GAME_IS ~BGT~ OR GAME_IS ~SOA~ OR GAME_IS ~TOB~ ~Baldur's Gate II, Baldur's Gate, BGT or TuTu/easyTuTu are required to install this component.~
+
+ACTION_IF GAME_IS ~BGT~ THEN BEGIN
+  COPY ~IlmatarPack/Jaheira/njaheirl.bmp~  ~override/jaheiral.bmp~
+  COPY ~IlmatarPack/Jaheira/njaheirm.bmp~  ~override/jaheiram.bmp~
+  COPY ~IlmatarPack/Jaheira/njaheirs.bmp~  ~override/jaheiras.bmp~
+END 
+
+ACTION_IF GAME_IS ~SOA~ OR GAME_IS ~TOB~ THEN BEGIN
+  COPY ~IlmatarPack/Jaheira~  ~override~
+END ELSE BEGIN
+  ACTION_IF GAME_IS ~BG1~ OR GAME_IS ~TOTSC~ THEN BEGIN
+    COPY ~IlmatarPack/Jaheira/njaheirl.bmp~  ~override/jaheirag.bmp~
+    COPY ~IlmatarPack/Jaheira/njaheirm.bmp~  ~override/jaheiral.bmp~
+    COPY ~IlmatarPack/Jaheira/njaheirs.bmp~  ~override/jaheiras.bmp~
+  END ELSE BEGIN
+    ACTION_IF GAME_IS ~TUTU~ OR GAME_IS ~TUTU_TOTSC~ OR GAME_IS ~TUTU+TOTSC~ THEN BEGIN
+      COPY ~IlmatarPack/jaheira/njaheirm.bmp~  ~override/_aheiral.bmp~
+      COPY ~IlmatarPack/jaheira/njaheirs.bmp~  ~override/_aheiras.bmp~
+    END
+  END
+END
+
+BEGIN ~Ilmatar's Portrait Pack - Mazzy~
+REQUIRE_PREDICATE GAME_IS ~SOA~ OR GAME_IS ~TOB~ ~BGII is required to install this component.~
+  COPY ~IlmatarPack/Mazzy~      ~override~
+  
+BEGIN ~Ilmatar's Portrait Pack - Nalia~
+REQUIRE_PREDICATE GAME_IS ~SOA~ OR GAME_IS ~TOB~ ~BGII is required to install this component.~
+  COPY ~IlmatarPack/Nalia~      ~override~
+  
+BEGIN ~Ilmatar's Portrait Pack - Viconia~
+REQUIRE_PREDICATE GAME_IS ~bg1~ OR GAME_IS ~TOTSC~ OR GAME_IS ~TUTU~ OR GAME_IS ~TUTU_TOTSC~ OR GAME_IS ~TUTU+TOTSC~ OR GAME_IS ~BGT~ OR GAME_IS ~SOA~ OR GAME_IS ~TOB~ ~Baldur's Gate II, Baldur's Gate, BGT or TuTu/easyTuTu are required to install this component.~
+
+ACTION_IF GAME_IS ~BGT~ THEN BEGIN
+  COPY ~IlmatarPack/Viconia/nViconl.bmp~  ~override/Viconial.bmp~
+  COPY ~IlmatarPack/Viconia/nviconm.bmp~  ~override/Viconiam.bmp~
+  COPY ~IlmatarPack/Viconia/nvicons.bmp~  ~override/Viconias.bmp~
+END 
+
+ACTION_IF GAME_IS ~SOA~ OR GAME_IS ~TOB~ THEN BEGIN
+  COPY ~IlmatarPack/Viconia~  ~override~
+END ELSE BEGIN
+  ACTION_IF GAME_IS ~BG1~ OR GAME_IS ~TOTSC~ THEN BEGIN
+    COPY ~IlmatarPack/Viconia/nViconl.bmp~  ~override/Viconiag.bmp~
+    COPY ~IlmatarPack/Viconia/nViconm.bmp~  ~override/Viconial.bmp~
+    COPY ~IlmatarPack/Viconia/nVicons.bmp~  ~override/Viconias.bmp~
+  END ELSE BEGIN
+    ACTION_IF GAME_IS ~TUTU~ OR GAME_IS ~TUTU_TOTSC~ OR GAME_IS ~TUTU+TOTSC~ THEN BEGIN
+      COPY ~IlmatarPack/Viconia/nViconm.bmp~  ~override/_iconial.bmp~
+      COPY ~IlmatarPack/Viconia/nVicons.bmp~  ~override/_iconias.bmp~
+    END
+  END
+END
+
+BEGIN ~Ilmatar's Portrait Pack - Yoshimo~
+REQUIRE_PREDICATE GAME_IS ~SOA~ OR GAME_IS ~TOB~ ~BGII is required to install this component.~
+  COPY ~IlmatarPack/Yoshimo~      ~override~
